@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <h2>Pyramid Slide</h2>
+</head>
+<body>
+    <form>
+        <span>Brick symbol: </span>
+        <select id="dropdown" onchange="dropdownFunction()">
+            <option value="#">#</option>
+            <option value="@">@</option>
+            <option value="X">X</option>
+            <option value="$">$</option>
+        </select>
+        <span>How high?</span>
+        <input type="range" id="slideCounter" name="slider" oninput="sliderFunction()" min = 1 max = 20 value = 1>
+        <span id="rowCounter">1</span>
+    </form>
+    <div id="drawPyramid">
+
+    </div>
+    <script src="pyramid-slide.js"></script>
+</body>
+<style>
+
+</style>
+</html>
