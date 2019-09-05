@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <h2>Pyramid Slide</h2>
+    <title>Pyramid Slide</title>
 </head>
-<body>
+<body onload="drawPyramid()">
+    <h2>Pyramid Slide</h2>
     <form>
         <span>Brick symbol: </span>
-        <select id="dropdown" onchange="dropdownFunction()">
+        <select id="dropdown" onchange="drawPyramid()">
             <option value="#">#</option>
             <option value="@">@</option>
             <option value="X">X</option>

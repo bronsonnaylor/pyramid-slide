@@ -1,50 +1,36 @@
-let dropdownFunction = () => {
-    let currentSymbol = document.getElementById("dropdown").value;
-    console.log(currentSymbol);
-    drawPyramid();
-}
-
+let height = document.getElementById("slideCounter");
+let drawSymbol = document.getElementById("dropdown");
 
 let sliderFunction = () => {
-    let slider = document.getElementById("slideCounter");
-    document.getElementById("rowCounter").innerHTML = slider.value;
+    document.getElementById("rowCounter").innerHTML = height.value;
     drawPyramid();
-
 }
-
-
-let spacer = (drawSymbol) => {
-    if (drawSymbol == "@") {
+let spacer = () => {
+    if (drawSymbol.value == "@") {
         return 4;
     }
     
-    if (drawSymbol == "X") {
+    if (drawSymbol.value == "X") {
         return 3;
     }
     return 2;
 }
 
-
 let drawPyramid = () => {
-    let height = document.getElementById("slideCounter").value;
-    let drawSymbol = document.getElementById("dropdown").value;
     document.getElementById("drawPyramid").innerHTML = "";
 
-    let spaces = spacer(drawSymbol)
-    console.log(spaces);
-
-    for (let row = 0; row < height; row++) {
+    for (let row = 0; row < height.value; row++) {
 
         let numBricks = row + 2;
-        let numSpaces = height - row - 1;
+        let numSpaces = height.value - row - 1;
 
         let rowStr = "";
         for (let i = 0; i < numSpaces; i++) {
-            let spaceChar = "&nbsp";
-            rowStr += spaceChar.repeat(spaces);
+            let spaceChar = "&nbsp;";
+            rowStr += spaceChar.repeat(spacer());
         }
         for (let i = 0; i < numBricks; i++) {
-            rowStr += drawSymbol;
+            rowStr += drawSymbol.value;
         }
 
         rowElem = document.createElement("p");
