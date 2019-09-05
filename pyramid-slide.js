@@ -1,7 +1,7 @@
 let dropdownFunction = () => {
     let currentSymbol = document.getElementById("dropdown").value;
     console.log(currentSymbol);
-    return currentSymbol;
+    drawPyramid();
 }
 
 
@@ -14,39 +14,36 @@ let sliderFunction = () => {
 
 
 let spacer = (drawSymbol) => {
-    let spaces = 2;
-
     if (drawSymbol == "@") {
-        return spaces = 4;
+        return 4;
     }
     
     if (drawSymbol == "X") {
-        return spaces = 3;
+        return 3;
     }
-
-    return spaces = 2;
+    return 2;
 }
 
 
 let drawPyramid = () => {
     let height = document.getElementById("slideCounter").value;
-    let drawSymbol = dropdownFunction();
+    let drawSymbol = document.getElementById("dropdown").value;
     document.getElementById("drawPyramid").innerHTML = "";
 
     let spaces = spacer(drawSymbol)
     console.log(spaces);
 
-    for (var row = 0; row < height; row++) {
+    for (let row = 0; row < height; row++) {
 
-        var numBricks = row + 2;
-        var numSpaces = height - row - 1;
+        let numBricks = row + 2;
+        let numSpaces = height - row - 1;
 
-        var rowStr = "";
-        for (var i = 0; i < numSpaces; i++) {
-            var spaceChar = "&nbsp";
+        let rowStr = "";
+        for (let i = 0; i < numSpaces; i++) {
+            let spaceChar = "&nbsp";
             rowStr += spaceChar.repeat(spaces);
         }
-        for (var i = 0; i < numBricks; i++) {
+        for (let i = 0; i < numBricks; i++) {
             rowStr += drawSymbol;
         }
 
